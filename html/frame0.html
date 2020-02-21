@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <style>
+        .empty{ text-align: center; padding: 120px 0; }
+        .swiper-slide img{width:100%;height:auto;}
+    </style>
+</head>
+<body>
+    <!-- <div class="empty">云API</div>
+    <div class="">
+      显示文字云API哈哈哈
+    </div> -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../image/1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../image/3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../image/4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../image/5.jpg" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script src="../script/swiper.min.js" charset="utf-8"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 0,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+</body>
+</html>
