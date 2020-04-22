@@ -1,2 +1,0 @@
-webpackJsonp([7],{bgPU:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"apic_main"},[t("h3",[this._v("Others")])])}]},r=n("VU/8")({name:"others"},s,!1,null,null,null);t.default=r.exports}});
-//# sourceMappingURL=7.b058fc66809497969c2e.js.map
