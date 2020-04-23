@@ -1,2 +1,0 @@
-webpackJsonp([8],{bgPU:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var i={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"apic_main"},this._l(this.otherList,function(t){return e("mt-cell",{attrs:{title:t.title,to:t.url,"is-link":"",value:""}})}),1)},staticRenderFns:[]},r=n("VU/8")({name:"others",data:function(){return{otherList:[{title:"画布",url:"/drawingboard"}]}},mounted:function(){},methods:{}},i,!1,null,null,null);e.default=r.exports}});
-//# sourceMappingURL=8.d8d352e4abf4b03b6da1.js.map
