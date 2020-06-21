@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+</head>
+<body>
+    <div class="bodyMain">
+
+    </div>
+    <script>
+        // if(sessionStorage.getItem('isLoad')=='true'){
+        //     sessionStorage.setItem('isLoad',false);
+        //     location.reload();
+        // }else{
+        var codeDatas = JSON.parse(sessionStorage.getItem('codeData'));
+        console.log(codeDatas);
+        sessionStorage.removeItem('codeData');
+        var allHtml = codeDatas.areahtml;
+        var headerStr = allHtml.split("<head>")[1].split("</head>")[0];
+        var bodyStr = allHtml.split("<body>")[1].split("</body>")[0];
+        console.log(headerStr);
+        console.log(bodyStr);
+        setInnerHtml('head',headerStr);
+        setInnerHtml('.bodyMain',bodyStr,'write');
+        setTimeout(()=>{
+            // eval(codeDatas.areajs);
+            if(codeDatas.areacss){
+                var styleEl = creatEl('style');
+                styleEl.innerText = codeDatas.areacss;
+                appendEl(styleEl,'head');
+            }
+            if(codeDatas.areajs){
+                var scriptEl = creatEl('script');
+                scriptEl.innerText = codeDatas.areajs
+                appendEl(scriptEl,'body');
+            }
+            
+        },300)
+        // }
+        function creatEl(el){
+            return document.createElement(el);
+        }
+        function appendEl(curEl,targetEl,types){
+            //types--id,class,tag标签名,name属性,all1选择器,all2选择器组
+            // var targetEls = document.querySelector(targetEl);
+            var targetEls = elFn(targetEl,types);
+            targetEls.appendChild(curEl);
+        }
+        function setInnerHtml(targetEl,setdata,aptype,types){
+            //types--id,class,tag标签名,name属性,all1选择器,all2选择器组
+            var targetEls = elFn(targetEl,types);
+            if(aptype=='write'){
+                document.write(setdata);
+            }else{
+                targetEls.innerHTML = setdata;
+            }
+            
+            
+        }
+        function elFn(targetEl,types){
+            //types--id,class,tag标签名,name属性,all1选择器,all2选择器组
+            var targetEls;
+            if(types=='id'){
+                targetEls = document.getElementById(targetEl);
+            }else if(types=='class'){
+                targetEls = document.getElementsByClassName(targetEl);
+                // targetEls = targetEls[0];
+                targetEls.length>1?targetEls = targetEls[0]:'';
+            }else if(types=='tag'){
+                targetEls = document.getElementsByTagName(targetEl);
+                targetEls = targetEls[0];
+            }else if(types=='all1'){
+                targetEls = document.querySelector(targetEl);
+            }else if(types=='all2'){
+                targetEls = document.querySelectorAll(targetEl);
+                targetEls = targetEls[0];
+            }else{
+                targetEls = document.querySelector(targetEl);
+            }
+            console.log(targetEls);
+            return targetEls;
+        }
+    </script>
+</body>
+</html>
